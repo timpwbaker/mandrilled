@@ -1,0 +1,11 @@
+<p>Emails sent: <%= dashboard_data_presenter.sent %>
+<p>Emails opened: <%= dashboard_data_presenter.opened %>
+<p>Total clicks: <%= dashboard_data_presenter.clicked %>
+<% dashboard_data_presenter.all_email_types.each do |type| %>
+  <p>Open rate for <%= type.underscore.humanize %>: 
+  <%= dashboard_data_presenter.open_rate(type: type) %>%
+<% end %>
+<% dashboard_data_presenter.all_email_types.each do |type| %>
+  <p>Click rate for <%= type.underscore.humanize %>: 
+  <%= dashboard_data_presenter.click_rate(type: type) %>%
+<% end %>

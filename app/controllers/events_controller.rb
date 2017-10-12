@@ -1,0 +1,22 @@
+class EventsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
+  def create
+    event = EventBuilder.build(event_params: event_params)
+    if event.save
+      head :ok
+    else
+      head :unprocessable_entity
+    end
+  end
+
+  private
+
+  def event_params
+    params.permit("Address", "EmailType", "Event", "Timestamp")
+  end
+
+  def params
+    ActionController::Parameters.new(JSON.parse(request.raw_post))
+  end
+end

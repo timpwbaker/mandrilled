@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+// Page section elements
+body { @extend .container; }
+
+section { @extend .row; }
+
+.alert { @extend .alert }
+.alert-success { @extend .alert-success }
+.alert-danger { @extend .alert-danger }
+
+//Navigation elements
+nav { @extend .navbar; }
+nav a.home { @extend .navbar-brand }
+nav ul.right-side { @extend .nav; @extend .navbar-nav }
+
+// Text elements
+p.strong { @extend .lead; }
+small { @extend .text-muted }
+
+// Form elements
+form input { @extend .form-control; }
+div.field-group { @extend .form-group; }
+input.submit { @extend .btn; @extend .btn-primary }
+
