@@ -1,0 +1,65 @@
+<div class="chart-container">
+  <div class="chart" id="chart">
+    <div class="chart-header">
+      <h5><%= type.underscore.humanize %></h5>
+    </div>
+    <div id='<%= "#{type}-bar-legend" %>' class="chart-legend"></div>
+    <canvas height="300px" id='<%= "#{type}Chart" %>'></canvas><br>
+  </div>
+</div>
+
+<script>
+var <%= type %>Options = {
+  responsive: true,
+  scaleShowLabels : true,
+  scaleOverride: true,
+  scaleSteps: 10,
+  scaleStepWidth: 10,
+  legend: {
+    display: true,
+    labels: {
+      fontColor: 'rgb(255, 99, 132)'
+    }
+  },
+  scales: {
+    xAxes: [{
+      stacked: true
+    }],
+    yAxes: [{
+      stacked: true
+    }]
+  }
+};
+
+//bar
+var <%= type %>Data = {
+  labels: ['<%= type.underscore.humanize %>'],
+  datasets: [
+  {
+    label: 'Open rate',
+    fillColor: "#028090",
+    strokeColor: "#028090",
+    borderWidth: 1,
+    highlightFill: "#028090",
+    highlightStroke: "#028090",
+    data: [<%= "#{data_miner.open_rate(type: type)}" %>]
+  },
+  {
+    label: 'Click rate',
+    fillColor: "#69DDFF",
+    strokeColor: "#69DDFF",
+    borderWidth: 1,
+    highlightFill: "#69DDFF",
+    highlightStroke: "#69DDFF",
+    data: [<%= "#{data_miner.click_rate(type: type)}" %>]
+  }
+  ]
+};
+
+$(document).ready( function() {
+  var <%= "ctx#{type}" %> = document.getElementById('<%= "#{type}Chart" %>').getContext("2d");
+  var <%= "#{type}Chart" %> = new Chart(<%= "ctx#{type}" %>).Bar(<%= type %>Data,<%= type %>Options);
+
+  document.getElementById('<%= "#{type}-bar-legend" %>').innerHTML = <%= "#{type}Chart" %>.generateLegend();
+});
+</script>

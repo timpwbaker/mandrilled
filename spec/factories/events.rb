@@ -3,7 +3,14 @@ require 'date'
 FactoryGirl.define do
   factory :event do
     address { "jamesdean@eastofeden.com" }
-    timestamp { DateTime.current - 1.day }
+
+    trait :now do
+      timestamp { DateTime.current}
+    end
+
+    trait :yesterday do
+      timestamp { DateTime.current  - 1.day }
+    end
 
     trait :shipment do
       email_type { "Shipment" }

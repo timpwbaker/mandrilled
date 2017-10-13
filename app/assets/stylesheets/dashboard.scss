@@ -1,0 +1,59 @@
+.emails-sent {
+  color: #fff;
+  background-color: #114B5F;
+  padding: 5% 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.emails-opened {
+  color: #000;
+  background-color: #E4FDE1;
+  padding: 5% 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.emails-clicked {
+  color: #fff;
+  background-color: #F45B69;
+  padding: 5% 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.chart {
+  width: 100%;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.no-charts {
+  margin-top: 30px;
+}
+
+.chart-legend {
+  position: absolute;
+  padding: 0;
+}
+
+.chart-legend ul {
+  list-style: none;
+  padding: 0;
+  float:right;
+}
+
+.chart-header {
+  float: left;
+  height: 40px;
+}
+
+.chart-legend li span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}

@@ -1,0 +1,47 @@
+<header>
+  <div class="dashboard-details">
+    <h1>Event Dashboard</h1>
+    <%= form_tag dashboard_path do %>
+      <%= label_tag :start_date %>
+      <%= text_field_tag :start_date, data_miner.start_date_string, class: "datepicker" %>
+      <%= label_tag :end_date %>
+      <%= text_field_tag :end_date, data_miner.end_date_string, class: "datepicker" %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</header>
+<section class="overall-stats content-block">
+  <div class="dashboard-headline-stat-box">
+    <div class="emails-sent">
+      Emails sent: <%= data_miner.sent %></p>
+    </div>
+  </div>
+  <div class="dashboard-headline-stat-box">
+    <div class= "emails-opened">
+      <p>Emails opened: <%= data_miner.opened %></p>
+    </div>
+  </div>
+  <div class="dashboard-headline-stat-box">
+    <div class="emails-clicked">
+      <p>Total clicks: <%= data_miner.clicked %></p>
+    </div>
+  </div>
+</section>
+<section class="rate-stats content-block">
+  <div>
+    <h2>Open and click rate by email type</br>
+      <small>Open rate is the percentage of emails sent that are opened, click rate is 
+        the percentage of emails sent that are clicked</small></h2>
+  </div>
+  <% if data_miner.show_conversion_rates? %>
+    <% data_miner.all_email_types.each do |type| %>
+      <%= render partial: "rate_bar_chart", locals: {type: type, data_miner: data_miner } %>
+    <% end %>
+  <% else %>
+    <div class="no-charts">
+    <h3>
+      No emails have been sent. Send some in order to see conversion rates.
+    </h3>
+    </div>
+  <% end %>
+</section>

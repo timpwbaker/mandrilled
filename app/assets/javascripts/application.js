@@ -12,4 +12,13 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require jquery-ui
+//= require chart
 //= require_tree .
+
+$(function() {
+    $('.datepicker').datepicker({
+       dateFormat: "dd M yy"
+    });
+});

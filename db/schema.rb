@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171012151009) do
     t.text "address", default: "", null: false
     t.text "email_type", default: "", null: false
     t.text "event", default: "", null: false
-    t.datetime "timestamp", default: "2017-10-12 19:46:19", null: false
+    t.datetime "timestamp", default: "2017-10-13 22:42:58", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email_type"], name: "index_events_on_email_type"
