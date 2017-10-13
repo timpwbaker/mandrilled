@@ -49,6 +49,17 @@ Simple Cov will tell you how much of the application is executed by the tests
     rspec
     open coverage/index.html
 
+## CI and automated review
+
+The application is setup for CircleCI, and heroku auto deploys master on
+green
+
+    https://circleci.com/gh/timpwbaker/mandrilled
+
+The application is also evaluated by Code Climate
+
+    https://codeclimate.com/github/timpwbaker/mandrilled
+
 # Todo
 
 Some things to consider for the future:

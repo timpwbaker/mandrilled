@@ -1,0 +1,14 @@
+version: "2"
+plugins:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby:
+exclude_patterns:
+- "vendor/"
+- "spec/"
+- "db/migrate/"
+- "config/environments/"
