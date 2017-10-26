@@ -8,6 +8,7 @@ header { @extend .row; }
 section div { @extend .col-md-12 }
 
 .dashboard-details { @extend .col-md-12 }
+.real-time-events { @extend .col-md-12 }
 .dashboard-headline-stat-box { @extend .col-md-4 }
 .chart-container { @extend .col-xl-4; @extend .col-lg-6; @extend .col-md-12 }
 .no-charts { @extend .col-xl-12 }
@@ -15,6 +16,9 @@ section div { @extend .col-md-12 }
 .alert { @extend .alert }
 .alert-success { @extend .alert-success }
 .alert-danger { @extend .alert-danger }
+
+button.green-button { @extend .btn; @extend .btn-success }
+.toggle-real-time { @extend .text-right; }
 
 //Navigation elements
 nav { @extend .navbar; }

@@ -28,6 +28,10 @@ module Mandrilled
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    config.generators do |g|
+        g.test_framework :rspec
+    end
+
     # Use uuid not id
     config.generators do |g|
         g.orm :active_record, primary_key_type: :uuid

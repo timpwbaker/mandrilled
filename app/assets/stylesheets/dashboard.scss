@@ -1,3 +1,8 @@
+.dashboard-headline-stat-box {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 .emails-sent {
   color: #fff;
   background-color: #114B5F;
@@ -23,6 +28,11 @@
   width: 100%;
   text-align: center;
   border-radius: 8px;
+}
+
+.real-time-span {
+  float: left;
+  width: 33%;
 }
 
 .chart {
