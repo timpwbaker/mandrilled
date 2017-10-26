@@ -12,9 +12,9 @@ RSpec.feature "User visits the dashboard" do
   end
 
   scenario "from the root path" do
-    FactoryGirl.create_list :event, 10, :send, :shipment
-    FactoryGirl.create_list :event, 5, :open, :shipment
-    FactoryGirl.create_list :event, 1, :click, :shipment
+    FactoryGirl.create_list :event, 10, :now, :send, :shipment
+    FactoryGirl.create_list :event, 5, :now, :open, :shipment
+    FactoryGirl.create_list :event, 1, :now, :click, :shipment
 
     visit root_path
 
@@ -26,9 +26,9 @@ end
 
 RSpec.feature "User can see open and click charts", js: true do
   scenario "from the root path" do
-    FactoryGirl.create_list :event, 10, :send, :shipment
-    FactoryGirl.create_list :event, 5, :open, :shipment
-    FactoryGirl.create_list :event, 1, :click, :shipment
+    FactoryGirl.create_list :event, 10, :now, :send, :shipment
+    FactoryGirl.create_list :event, 5, :now, :open, :shipment
+    FactoryGirl.create_list :event, 1, :now, :click, :shipment
 
     visit root_path
 
@@ -53,8 +53,9 @@ RSpec.feature "User can choose the dates they want to query", js: true do
     expect(page).to have_content "Emails opened: 14"
     expect(page).to have_content "Total clicks: 6"
 
-    fill_in "Start date", with: Date.today
-    fill_in "End date", with: Date.today
+    select Date.today.day, from: "start_date_day"
+    select Date.today.strftime("%B"), from: "start_date_month"
+    select Date.today.year, from: "start_date_year"
     click_button "Search"
 
     expect(page).to have_content "Emails sent: 10"

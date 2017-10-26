@@ -2,28 +2,29 @@
   <div class="dashboard-details">
     <h1>Event Dashboard</h1>
     <%= form_tag dashboard_path do %>
-      <%= label_tag :start_date %>
-      <%= text_field_tag :start_date, data_miner.start_date_string, class: "datepicker" %>
+      <p><%= label_tag :start_date %>
+    <%= select_date Date.today - 7.days, order: [:day, :month, :year], prefix: :start_date %></br>
       <%= label_tag :end_date %>
-      <%= text_field_tag :end_date, data_miner.end_date_string, class: "datepicker" %>
+    <%= select_date Date.today, order: [:day, :month, :year], prefix: :end_date %></p>
       <%= submit_tag("Search") %>
     <% end %>
   </div>
 </header>
 <section class="overall-stats content-block">
-  <div class="dashboard-headline-stat-box">
-    <div class="emails-sent">
-      Emails sent: <%= data_miner.sent %></p>
+    <div class="dashboard-headline-stat-box">
+      <div class="emails-sent">
+        Emails sent: <%= data_miner.sent %></p>
+      </div>
     </div>
-  </div>
-  <div class="dashboard-headline-stat-box">
-    <div class= "emails-opened">
-      <p>Emails opened: <%= data_miner.opened %></p>
+    <div class="dashboard-headline-stat-box">
+      <div class= "emails-opened">
+        <p>Emails opened: <%= data_miner.opened %></p>
+      </div>
     </div>
-  </div>
-  <div class="dashboard-headline-stat-box">
-    <div class="emails-clicked">
-      <p>Total clicks: <%= data_miner.clicked %></p>
+    <div class="dashboard-headline-stat-box">
+      <div class="emails-clicked">
+        <p>Total clicks: <%= data_miner.clicked %></p>
+      </div>
     </div>
 </section>
 <section class="real-time-stats content-block">

@@ -16,9 +16,3 @@
 //= require jquery-ui
 //= require chart
 //= require_tree .
-
-$(function() {
-    $('.datepicker').datepicker({
-       dateFormat: "dd M yy"
-    });
-});
