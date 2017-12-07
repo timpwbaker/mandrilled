@@ -9,6 +9,9 @@ containing Address, EmailType, Event and Timestamp (unix) parameters.
 It has another endpoint for displaying data `/dashboard`, also found at the
 root path. Here you can also filter by date.
 
+Finally you can view real time events here `/real_time_events`, there is a
+button to request dummy data sent by https://get-me-mandrill.herokuapp.com
+
 ## Architecture
 
 The application has a single persisted data type, an event. Events can be

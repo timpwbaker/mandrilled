@@ -27,35 +27,6 @@
       </div>
     </div>
 </section>
-<section class="real-time-stats content-block">
-  <div class="toggle-real-time">
-    <p><%= button_to "Request dummy data", data_request_path, remote: true, class: "orange-button" %></br>
-    <%= button_tag "Show/hide real time stats",
-      class: "green-button", onclick: "$('.real-time-events').toggle();" %></p>
-    </p>
-  </div>
-  <div class="real-time-events">
-    <h3>Real time events </h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Event</th>
-          <th>Email type</th>
-          <th>Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% data_miner.last_ten_events.each do |event| %>
-          <tr>
-            <td><%= event.event %></td>
-            <td><%= event.email_type %></td>
-            <td><%= event.timestamp_string %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</section>
 <section class="rate-stats content-block">
   <div>
     <h2>Open and click rate by email type</br>

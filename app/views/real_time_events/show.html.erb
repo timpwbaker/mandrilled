@@ -1,0 +1,31 @@
+<header>
+  <div class="dashboard-details">
+    <h1>Real Time Events</h1>
+  </div>
+</header>
+<section class="real-time-stats content-block">
+  <div class="toggle-real-time">
+    <p><%= button_to "Request dummy data", data_request_path, remote: true, class: "orange-button" %></br>
+  </div>
+  <div class="real-time-events">
+    <h3>Real time events </h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Email type</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data_miner.last_ten_events.each do |event| %>
+          <tr>
+            <td><%= event.event %></td>
+            <td><%= event.email_type %></td>
+            <td><%= event.timestamp_string %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
