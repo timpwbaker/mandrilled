@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :events, only: [:create]
   resource :dashboard, only: [:create, :show]
+  resource :data_request, only: [:create]
 end

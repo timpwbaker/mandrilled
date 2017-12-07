@@ -29,7 +29,8 @@
 </section>
 <section class="real-time-stats content-block">
   <div class="toggle-real-time">
-    <p><%= button_tag "Show/hide real time stats",
+    <p><%= button_to "Request dummy data", data_request_path, remote: true, class: "orange-button" %></br>
+    <%= button_tag "Show/hide real time stats",
       class: "green-button", onclick: "$('.real-time-events').toggle();" %></p>
     </p>
   </div>

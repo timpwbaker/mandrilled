@@ -20,18 +20,21 @@ gem 'readthis'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'activeresource'
 
 group :development, :test do
+  gem "dotenv-rails"
   gem 'capybara'
+  gem 'capybara_discoball'
   gem 'chromedriver-helper'
   gem 'database_cleaner', '~> 1.6.0'
-  gem "dotenv-rails"
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda'
+  gem 'sinatra'
 end
 
 group :development do

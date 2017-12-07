@@ -18,6 +18,9 @@ section div { @extend .col-md-12 }
 .alert-danger { @extend .alert-danger }
 
 button.green-button { @extend .btn; @extend .btn-success }
+input.green-button { @extend .btn; @extend .btn-success }
+button.orange-button { @extend .btn; @extend .btn-warning }
+input.orange-button { @extend .btn; @extend .btn-warning }
 .toggle-real-time { @extend .text-right; }
 
 //Navigation elements
